@@ -1,0 +1,80 @@
+{
+    "name": "syriable/maintenance-guard",
+    "description": "Dynamic, extensible access control for Laravel's native maintenance mode.",
+    "keywords": [
+        "laravel",
+        "maintenance",
+        "maintenance-mode",
+        "middleware",
+        "livewire"
+    ],
+    "homepage": "https://github.com/syriable/maintenance-guard",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syriable",
+            "email": "alkhatib.syr@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/contracts": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/routing": "^13.0",
+        "illuminate/support": "^13.0",
+        "spatie/laravel-package-tools": "^1.92"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.24",
+        "livewire/livewire": "^4.0",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-arch": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "rector/rector": "^2.0"
+    },
+    "suggest": {
+        "livewire/livewire": "Enables the built-in Livewire integration."
+    },
+    "autoload": {
+        "psr-4": {
+            "Syriable\\MaintenanceGuard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Syriable\\MaintenanceGuard\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "refactor": "vendor/bin/rector"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Syriable\\MaintenanceGuard\\MaintenanceGuardServiceProvider"
+            ],
+            "aliases": {
+                "MaintenanceGuard": "Syriable\\MaintenanceGuard\\Facades\\MaintenanceGuard"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
