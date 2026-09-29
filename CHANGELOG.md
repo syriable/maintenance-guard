@@ -2,7 +2,7 @@
 
 All notable changes to `syriable/maintenance-guard` will be documented in this file.
 
-## Unreleased
+## 1.0.0 - 2026-09-29
 
 ### Added
 
